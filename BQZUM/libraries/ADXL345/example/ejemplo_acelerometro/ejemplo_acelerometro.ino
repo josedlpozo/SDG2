@@ -1,5 +1,7 @@
 #include <Wire.h>
 #include <ADXL345.h>
+#include <Sensor.h>
+
 
 /* Constructor */
 ADXL345 accel = ADXL345(12345);
