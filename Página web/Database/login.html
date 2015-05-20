@@ -1,0 +1,133 @@
+<? session_start();
+?> 
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Octopus</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+	</head>
+
+<body> 
+	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="color: black"  class="navbar-brand page-scroll" href="http://www.octopus3p.com">Inicio</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!--
+            <div  style="color: black" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" display ="block" align ="left">
+                    <li >
+                        <a style="color: black" class="page-scroll" href="#about">Conócenos</a>
+                    </li>
+                    <li>
+                        <a style="color: black"class="page-scroll" href="#services">Personaliza</a>
+                    </li>
+                    <li>
+                        <a style="color: black" class="page-scroll" href="#portfolio">Galería </a>
+                    </li>
+                    
+                    <li>
+                        <a style="color: black" class="page-scroll" href="#somos">Quienes somos</a>
+                    </li>
+                    <li>
+                        <a style="color: black" class="page-scroll" href="#contact">Contacta</a>
+                    </li>
+                    <li>
+                        <a style="color: black" class="page-scroll" href="#acceder">Acceder</a>
+                    </li>
+                </ul>
+            </div>
+            -->
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<p align="center" >
+<br>
+<br>
+<p align="center" >
+
+<section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">ACCESO PARA USUARIOS</h2>
+                    <hr class="light">
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--
+<div align="center">
+    <form method="post" action="acces.php" align="center">
+        Usuario:
+        <br>
+        <input type="Text" name="usuario" >
+        <br>
+         <br>
+        Contraseña:<br>
+        <input type="password" name="password" ><br>
+        <input type="Submit" name="enviar" value="login">
+    </form>
+</div>
+-->
+<br>
+<div align="center">
+    <div class="login">
+ <form method="post" action="acces.php" align="center">
+         <p><input type="text" name="usuario" value="" placeholder="Nombre de usuario"></p>
+        <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
+        <p class="remember_me">
+          <label>
+            <input type="checkbox" name="remember_me" id="remember_me">
+            Recordarme
+          </label>
+        </p>
+        <p class="submit"><input type="submit" name="enviar" value="Login"></p>
+      </form>
+    </div>
+
+    <div class="login-help">
+      <p>Has olvidado la contraseña? <a href="index.html">Haz clik aqui</a>.</p>
+    </div>
+  </div>
+
+
+</body>
+</html>

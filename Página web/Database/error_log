@@ -1,0 +1,6 @@
+[15-Apr-2015 08:22:12 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/octopu87s/public_html/base_datos/funciones_bd.php on line 36
+[20-Apr-2015 15:21:33 UTC] PHP Fatal error:  Class 'funciones_BD' not found in /home/octopu87s/public_html/base_datos/send.php on line 15
+[21-Apr-2015 21:48:22 UTC] PHP Fatal error:  Call to undefined method funciones_BD::fetch_row() in /home/octopu87s/public_html/base_datos/index.php on line 78
+[21-Apr-2015 21:48:56 UTC] PHP Fatal error:  Call to undefined method funciones_BD::fetch_row() in /home/octopu87s/public_html/base_datos/acces.php on line 24
+[23-Apr-2015 15:07:16 UTC] PHP Fatal error:  Call to undefined function open() in /home/octopu87s/public_html/base_datos/acces.php on line 23
+[24-Apr-2015 14:57:45 UTC] PHP Fatal error:  Call to undefined function session_register() in /home/octopu87s/public_html/base_datos/acces.php on line 24

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Octopus</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+          function desglose(){
+            console.log("desglose");
+            $("#text").html("");
+            var sensores =[];
+            sensores.push($("#basico"),$("#solar"),$("#bateria"),$("#mcp"),$("#basico_moto"),$("#gps"),
+                $("#rf"),$("#rf_sup"),$("#infra"));
+            var i;
+            var suma = 0;
+            for(i=0;i<sensores.length;i++){
+                console.log("for");
+                console.log(sensores[i].prop("checked"));
+                if(sensores[i].prop("checked")){
+                    $("#text").html($("#text").html() + " "+ sensores[i].attr("name")+ " - " +sensores[i].attr("value")+"€\<br\>");
+                    suma += (+sensores[i].attr("value"));
+                    console.log("for-checked");
+                }
+            }
+            $("#text").html($("#text").html() + "\<br\>"+"Suma : "+suma+" €");
+        }
+    </script>
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="color: black"  class="navbar-brand page-scroll" href="#page-top">Inicio</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div  style="color: black" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" display ="block" align ="left">
+                    <li >
+                        <a style="color: black" class="page-scroll" href="#about">Conócenos</a>
+                    </li>
+                    <li>
+                        <a style="color: black"class="page-scroll" href="#services">Personaliza</a>
+                    </li>
+                    <li>
+                        <a style="color: black" class="page-scroll" href="#portfolio">Galería </a>
+                    </li>
+                    
+                    <li>
+                        <a style="color: black" class="page-scroll" href="#somos">Quienes somos</a>
+                    </li>
+                    <li>
+                        <a style="color: black" class="page-scroll" href="#contact">Contacta</a>
+                    </li>
+                    <li>
+                        <a style="color: black" class="page-scroll" href="http://www.octopus3p.com/base_datos/login.html">Acceder</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 >BIENVENIDOS A OCTOPUS</h1>
+                <hr>
+                <h2 >La insistencia es la clave del éxito</h2>
+                <hr>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Más información</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">ROBOT PARA AGRICULTURA DE PRECISIÓN</h2>
+                    <hr class="light">
+                    <p class="text-faded">Octopus es un robot desarrollado por alumnos de Ingeneria de Telecomunición en la Universidad Politécnica de Madrid. Octopus es capaz de registrar, almacenar, y además enviar información recogida por medio de sensores incorporados. Estos sensores pueden ser modificados a medida del usuario.
+        </p>
+        <p class="text-faded">Confiamos en la fácil incorporación de nuevos sensores lo que hace de OCTOPUS un proyecto puntero en el campo de la agricultura de precisión.
+        </p>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Personaliza Octopus</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+       <div class="row" align="center"> 
+            <div class="col-xs-12 col-s-12 col-md-4 col-lg-6" >
+                <h3>Sensores:</h3>
+                <form role="form">
+                    <div class="row">
+                        <div class="panel panel-primary" style="border-color: white">
+                            <div class="panel-heading" style="background-color:#19B21E;border-color: white">
+                            <h4 class="panel-title">Pack básico.</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"  value="70" name="Pack básico de sensorización." id="basico">
+                                        Pack básico de sensorización.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-primary" style="border-color: white">
+                            <div class="panel-heading" style="background-color:#19B21E;border-color: white">
+                                <h4 class="panel-title">Opcionales - Pack básico</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"   value="15" name="Panel solar." id="solar">
+                                        Panel solar.
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"   value="19.95" name="Batería" id="bateria">
+                                        Batería.
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"   value="8" name="Sensor MCP9800" id="mcp">
+                                        Sensor MCP9800. Temperatura a mayor precisión.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-primary" style="border-color: white">
+                            <div class="panel-heading" style="background-color:#19B21E;border-color: white">
+                                <h4 class="panel-title">Pack motorización básico.</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"   value="100" name="Pack motorización basico." id="basico_moto">
+                                        Pack motorización básico.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-primary" style="border-color: white">
+                            <div class="panel-heading" style="background-color:#19B21E;border-color: white">
+                                <h4 class="panel-title">Opcionales - Pack motorización.</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"  value="10" name="GPS." id="gps">
+                                        GPS.
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"  value="5" name="Modulo RF" id="rf">
+                                        Modulo RF.
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"  value="20" name="Modulo RF - mayor alcance" id="rf_sup">
+                                        Modulo RF con mayor alcance.
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"  value="15" name="Sensor de infrarrojo" id="infra">
+                                        Sensor de infrarrojo.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-default" onclick="desglose()">Total.</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-s-12 col-md-8 col-lg-6">
+                <h3>Desglose:</h3>
+                <p id="text"></p>
+            </div>
+  <!--
+            <div  >
+                <form action="" method="POST" id="payment-form">
+                  <span class="payment-errors"></span>
+
+                  <div  class="form-row">
+                    <label align="left" >
+                      <span>Número de tarjeta</span>
+                      <input type="text" size="20" data-stripe="number"/>
+                    </label>
+                  </div>
+
+                  <div  class="form-row">
+                    <label>
+                      <span>CVC</span>
+                      <input type="text" size="4" data-stripe="cvc"/>
+                    </label>
+                  </div>
+
+                  <div   class="form-row">
+                    <label align="left" >
+                      <span>Expiración (MM/YYYY)</span>
+                      <input   type="text" size="2" data-stripe="exp-month"/>
+                    </label>
+                    <span> / </span>
+                    <input type="text" size="4" data-stripe="exp-year"/>
+                  </div>
+
+                  <button type="submit">Pagar</button>
+                </form>
+            </div>
+            -->
+        </div>
+         
+    </section>
+     <div id="blueimp-gallery" class="blueimp-gallery">
+            <!-- The container for the modal slides -->
+            <div class="slides"></div>
+            <!-- Controls for the borderless lightbox -->
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+            <!-- The modal dialog, which will be used to wrap the lightbox content -->
+            <div class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body next"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left prev">
+                                <i class="glyphicon glyphicon-chevron-left"></i>
+                                Previous
+                            </button>
+                            <button type="button" class="btn btn-primary next">
+                                Next
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+        <script src="./../js/bootstrap-image-gallery.min.js"></script>
+
+    <section class="no-padding" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Galería</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box">
+                        <img src="img/logo2.png" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Categoría
+                                </div>
+                                <div class="project-name">
+                                    Logo
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a  class="portfolio-box">
+                        <img src="img/coche.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Categoría
+                                </div>
+                                <div class="project-name">
+                                    Diseño 3D
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box">
+                        <img src="img/bqzum.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Categoría
+                                </div>
+                                <div class="project-name">
+                                    Sensores
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a  class="portfolio-box">
+                        <img src="img/sd.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Categoría
+                                </div>
+                                <div class="project-name">
+                                    Transmisión y almacenamiento de datos
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a  class="portfolio-box">
+                        <img src="img/matlab.png" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Categoría
+                                </div>
+                                <div class="project-name">
+                                    Gráficas
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a  class="portfolio-box" data-gallery>
+                        <img src="img/pcb3p.png" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Categoría
+                                </div>
+                                <div class="project-name">
+                                    PCB
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+            <br><br><br><br><br>
+                
+    </section>
+
+  <section class="no-padding" id="somos">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Quienes somos</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <h3><a href="cv/cv_josedlpozo.pdf" >José María del pozo Alonso</h3>
+         </div>
+        <div class="col-lg-4 text-center">
+                    <h3><a href="cv/cv-santi.pdf">Santiago Pérez Peña</a></h3>
+        </div>
+
+               
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3><a href="cv/cv-fer.pdf">Fernando Pérez Fernández</a></h3>                
+                </div>
+            </div>
+        </div>
+         <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <h3><a href="./../cv/cv_josedlpozo.pdf" >Julia Martinez Ferrer </h3>
+         </div>
+        <div class="col-lg-4 text-center">
+                    <h3><a href="./../cv/cv_santi.pdf">Irene Martín Rodríguez</a></h3>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3><a href="cv/cv-dan.pdf">Daniel Briones Castaño</a></h3>                
+                </div>
+            </div>
+        </div>
+    
+
+
+    </section>
+
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Contacta con la empresa</h2>
+                    <hr class="primary">
+                    <p>¿Quieres contar con Octopus? ¡Genial! ¡LLamanos o mándanos un email y te contestaremos tan pronto como sea posible!</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                    <p>+34 616 61 59 78</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:your-email@your-domain.com">octopus@octopus3p.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+        <div class="col-lg-4 col-lg-offset-4 text-center">
+            <p>Visitas a nuestra página:</p>
+            <img style="border: 0px solid ; display: inline" alt="contador de visitas"
+        src="http://contador-de-visitas.com/hit.php?id=2239195&counter=12"></div>
+        
+    </footer>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>

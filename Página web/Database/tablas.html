@@ -1,0 +1,130 @@
+<?php
+ 
+ require_once 'funciones_bd.php';
+ $db = new funciones_BD();
+ 
+    
+ 
+    //Sentencia SQL
+$sql = "SELECT energy,water,temperature,time from admin;";
+//Array Multidimensional
+$rawdata = getArraySQL($sql)[0];
+ 
+//Adaptar el tiempo
+for($i=0;$i<count($rawdata);$i++){
+    console.log("HOLA"+$rawdata);
+    $time = $rawdata[$i]["time"];
+    //$date = new DateTime($time);
+    //$rawdata[$i]["time"]=$date->getTimestamp()*1000;
+}
+ 
+?>
+ 
+<HTML>
+<BODY>
+ 
+<meta charset="utf-8"> 
+ 
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Importo el archivo Javascript de Highcharts directamente desde su servidor -->
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+ 
+<div id="container">
+</div>
+ 
+ 
+<script type='text/javascript'>
+$(function () {
+    $(document).ready(function() {
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
+    
+        var chart;
+        $('#container').highcharts({
+            chart: {
+                type: 'spline',
+                animation: Highcharts.svg, // don't animate in old IE
+                marginRight: 10,
+                events: {
+                    load: function() {
+                        
+                    }
+                }
+            },
+            title: {
+                text: 'Physical Variables'
+            },
+            xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 150
+            },
+            yAxis: {
+                title: {
+                    text: 'Value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
+                        Highcharts.numberFormat(this.y, 2);
+                }
+            },
+            legend: {
+                enabled: true
+            },
+            exporting: {
+                enabled: true
+            },
+            series: [{
+                name: 'Energy Consumption',
+                data: (function() {
+                   var data = [];
+                    <?php
+                        for($i = 0 ;$i<count($rawdata);$i++){
+                    ?>
+                    data.push([<?php echo $rawdata[$i]["time"];?>,<?php echo $rawdata[$i]["temp"];?>]);
+                    <?php } ?>
+                return data;
+                })()
+            },{
+                name: 'Water Consumption',
+                     data: (function() {
+                        var data = [];
+                    <?php
+                        for($i = 0 ;$i<count($rawdata);$i++){
+                    ?>
+                    data.push([<?php echo $rawdata[$i]["time"];?>,<?php echo $rawdata[$i]["htierra"];?>]);
+                    <?php } ?>
+                return data;
+                     })() 
+            },{
+                name: 'Temperature',
+                     data: (function() {
+                         var data = [];
+                    <?php
+                        for($i = 0 ;$i<count($rawdata);$i++){
+                    ?>
+                    data.push([<?php echo $rawdata[$i]["time"];?>,<?php echo $rawdata[$i]["haire"];?>]);
+                    <?php } ?>
+                return data;
+                     })()     
+            }]
+        });
+    });
+    
+});
+ 
+ 
+</script>
+</html>
